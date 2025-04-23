@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMERS腕錶</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=LXGW+WenKai+TC&family=Vujahday+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        .vujahday-script-regular {
+            font-family: "Vujahday Script",
+                serif;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sec2Text {
+                display: block;
+                /* 水平置中 */
+                align-content: center;
+                /* 垂直置中 */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .sec2Textp {
+                display: block;
+                /* 水平置中 */
+                align-content: center;
+                /* 垂直置中 */
+                /* white-space: nowrap; 要換行*/
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .card-img-top {
+            object-fit: contain;
+        }
+
+        a:visited {
+            color: rgb(73, 29, 5);
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        .navBi:hover {
+            color: orange;
+        }
+    </style>
+</head>
+
+
+
+<body style="background-color: white;">
+    <!-- header -->
+    <div class="container-fluid bg-white m-2 sticky-top">
+        <nav class="navbar navbar-expand-lg vujahday-script-regular">
+            <div class="container-fluid">
+                <!-- header-logo -->
+                <a class="navbar-brand fs-2 fw-bolder" style="color: var(--bs-yellow); text-shadow: 1px 1px 1px gray;"
+                    href="#">
+                    <img src="./logo/logo-齒輪.png" class="rounded-circle" style="box-shadow: 1px 1px 3px 1px black;"
+                        width="45px" padding="0 10px">TIMERS</a>
+                <!-- 導覽列縮圖鈕  -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- 導覽列項目 -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0" style="gap: 30px;">
+                        <!-- nav-錶壇新訊 news -->
+                        <li class="nav-item">
+                            <a class="nav-link fs-3 fw-bold" style="color: brown;" href="#News">News</a>
+                            <!-- nav-品牌導覽 brands -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fs-3 fw-bold" style="color: brown;" href="#Brands"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">Brands
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#sec2PP"><img src="./logo/logo-PP.png"
+                                            style="width: 100px; height: 60px; object-fit: contain"></a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#sec2AP"><img src="./logo/logo-AP.png"
+                                            style="width: 100px; height: 60px; object-fit: contain"></a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#sec2VC"><img src="./logo/logo-vc.png"
+                                            style="width: 100px; height: 60px; object-fit: contain"></a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#sec2JLC"><img src="./logo/logo-JLC.png"
+                                            style="width: 100px; height: 60px; object-fit: contain"></a></li>
+                            </ul>
+                        </li>
+                        <!-- nav-腕表展示 watch -->
+                        <li class="nav-item">
+                            <a class="nav-link fs-3 fw-bold" style="color: brown;" href="#Watches">Watches</a>
+                        </li>
+                        <!-- nav-追蹤收藏 collection -->
+                        <li class="nav-item">
+                            <a class="nav-link fs-3 fw-bold" style="color: brown;" href="#">Collection</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0 ">
+                        <!-- nav-Icon-Search -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><button class="navBi bi bi-search fs-2"
+                                    style="border: none; background-color: transparent;"></button></a>
+                        </li>
+                        <!-- nav-Icon-shopBag -->
+                        <li class="nav-item">
+                            <a class="nav-link " href="#"><button class="navBi bi bi-bag-heart fs-2"
+                                    style="border: none; background-color: transparent;"></button></a>
+                        </li>
+                        <!-- nav-Icon-SignIn -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+                                aria-controls="staticBackdrop">
+                                <button class="navBi bi bi-person-fill fs-2"
+                                    style="border: none; background-color: transparent;"></button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- 側邊欄 -->
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+        aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header vujahday-script-regular">
+            <h2 id="staticBackdropLabel" class="offcanvas-title fw-bold m-3 text-warning">-- Sign In --</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body" style="pointer-events: auto;">
+            <form
+                style="background-color: rgb(239, 177, 61); border: 10px dashed white; border-radius: 15px; padding: 20px;">
+                <fieldset>
+                    <legend class="d-block text-center p-1 fw-bold">基本資料</legend>
+                    <div class="row row-cols-2 text-end m-1">
+                        <label for="userName" class="col-3 fw-bold">姓名 : </label>
+                        <input type="text" id="userName" class="col-7" placeholder="請輸入中文全名">
+                    </div>
+                    <div class="row row-cols-2 text-end m-1">
+                        <label for="userMail" class="col-3 fw-bold">email : </label>
+                        <input type="email" id="userMail" class="col-7" placeholder="xxxx@xxx.com" required>
+                    </div>
+                    <div class="row row-cols-2 text-end m-1">
+                        <label for="userPWD" class="col-3 fw-bold">密碼 : </label>
+                        <input type="password" id="userPWD" class="col-7" placeholder="請輸入1-8個英數字">
+                    </div>
+                    <div class="d-flex m-3 justify-content-center">
+                        <button class="btn m-2" data-bs-dismiss="offcanvas" aria-label="Close"
+                            style="background-color: rgb(184, 77, 19); color: white;">登入</button>
+                        <button class="btn m-2" data-bs-dismiss="offcanvas" aria-label="Close"
+                            style="background-color: rgb(99, 37, 3); color: white;">註冊</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <!-- section-1 錶壇新訊 news -->
+    <div id="News" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+        <!-- 輪播控制點 Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#News" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#News" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#News" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#News" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- 輪播片 The slideshow/carousel -->
+        <div class="carousel-inner mx-auto">
+            <div class="carousel-item active">
+                <img src="./News/VC-1.png" class="d-block w-100"
+                    style="object-fit: contain; width: 1200px; height:500px;">
+                <div class="carousel-caption d-none d-md-block bg-gray">
+                    <h3 class="fw-bold text-light" style="letter-spacing: 2px;">全新計時作品</h3>
+                    <p class="fs-1 text-light">HISTORIQUES 222 腕表</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./News/PP-2.jpg" class="d-block w-100"
+                    style="object-fit: contain; width: 1200px; height:500px;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="fw-bold vujahday-script-regular" style="color: white; letter-spacing: 2px;">百達翡麗 Cubitus
+                        系列</h3>
+                    <p class="fs-1 bg-secondary bg-opacity-25 w-75 mx-auto"
+                        style="font-family: Arial, Helvetica, sans-serif; color: white;">
+                        方形錶新選擇，你喜歡嗎?</p>
+                </div>
+            </div>
+            <div class="carousel-item justify-content-center">
+                <img src="./News/AP-1.png" class="d-block w-100"
+                    style="object-fit: contain; width: 1200px; height:500px;">
+                <div class="carousel-caption d-none d-lg-block">
+                    <h3 class="fw-bolder vujahday-script-regular"
+                        style="color: rgb(73, 29, 5); text-align: start; padding-left: 100px; letter-spacing: 2px;">AP X
+                        KAWS</h3>
+                    <p
+                        style="color: rgb(73, 29, 5); text-align: start; padding-left: 60px; font-size: larger; font-weight: 600; font-family: Arial, Helvetica, sans-serif; margin: 5px 40px;">
+                        限量版Royal Oak Concept概念陀飛輪腕錶，探索創意新境界。</p>
+                    <P
+                        style="color: rgb(73, 29, 5); text-align: start; padding-left: 60px; font-size: larger; font-weight: 600; font-family: Arial, Helvetica, sans-serif; margin: 5px 40px;">
+                        以鈦金屬打造，搭配創新外緣式時間顯示，盡顯KAWS美學風格。</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./News/JLC-1.png" class="d-block w-100"
+                    style="object-fit: contain; width: 1200px; height:500px;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="fw-bold text-dark" style="letter-spacing: 2px;">杜拜購物中心旗艦店</h3>
+                    <p class="fs-1 text-dark">ATELIER D'ANTOINE 工作坊：掌握製錶藝術</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 輪播按鈕-Left and right controls/icons -->
+    <button class="carousel-control-prev carousel-dark" type="button" data-bs-target="#News" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next carousel-dark" type="button" data-bs-target="#News" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+    <!-- section-2 品牌導覽 brands  -->
+    <br><br><br>
+    <h1 id="Brands" class="vujahday-script-regular m-5 fw-bold text-center"
+        style="color: var(--bs-yellow); letter-spacing: 2px;">--
+        品牌導覽
+        Brands --</h1>
+
+    <H4 id="sec2PP" class="m-5 fw-bolder">
+        <li
+            style="padding-left: 5px; color: rgb(108, 40, 3); border-left: 10px solid orange; list-style-type: none; font-family:Arial, Helvetica, sans-serif;">
+            百達翡麗(PP)</li>
+    </H4>
+    <div style="display: flex; margin: 50px 30px 100px 30px;">
+        <div class="w-50 m-auto" style="flex: 1;">
+            <img src="./logo/logo-PP.png" class="d-flex m-auto p-2"
+                style="width: 200px; height: 100px; font-weight: 400; object-fit: contain; filter: brightness(30%); box-shadow: 2px 3px 8px 1px rgb(73, 29, 5);">
+            <p class="d-none d-sm-block sec2Text"
+                style="font-size: large; font-weight: 500; padding: 30px 50px 10px 50px; color:rgb(73, 29, 5); text-indent: 35px; text-align: justify;">
+                有錶王之稱的百達翡麗(PP)創立於1839年，是日內瓦碩果僅存的獨立家族製表企業，
+                秉承創新傳統的同時，亦不斷推動製表技術突破界限，至今已獲100餘項專利。
+                作為製表業最嚴苛的品質標準，創建了自己的品質印記『百達翡麗印記』，
+                其高規格要求更是大幅超越了『日內瓦印記』的標準。</p>
+            <P class="d-none d-md-block fw-bold" style="color:rgb(73, 29, 5); font-size: large; text-align: center;">
+                熱門錶款: Nautilus-鸚鵡螺系列</P>
+        </div>
+        <div style="flex: 1; justify-content: center; align-content: center;"><img src="./section-2/PP-1.png"
+                style=" border: 0 solid transparent; border-radius: 20px; box-shadow: -1px 3px 10px 1px rgb(73, 29, 5);"
+                class="w-75 d-flex m-auto"></div>
+    </div>
+
+    <H4 id="sec2AP" class="m-5 fw-bolder">
+        <li
+            style="padding-left: 5px; color: rgb(108, 40, 3); border-left: 10px solid orange; list-style-type: none; font-family:Arial, Helvetica, sans-serif;">
+            愛彼(AP)</li>
+    </H4>
+    <div style="display: flex; margin: 50px 30px 100px 30px;">
+        <div style="flex: 1; justify-content: center; align-content: center;"><img src="./section-2/AP-雜誌.png"
+                style=" border: 0 solid transparent; border-radius: 20px; box-shadow: -1px 3px 10px 1px rgb(73, 29, 5);"
+                class="w-75 d-flex m-auto"></div>
+        <div class="w-50 m-auto" style="flex: 1;">
+            <img src="./logo/logo-AP.png" class="d-flex m-auto p-2"
+                style="width: 200px; height: 100px; font-weight: 400; object-fit: contain; filter: brightness(30%); box-shadow: 2px 3px 8px 1px rgb(73, 29, 5);">
+            <p class="d-none d-sm-block sec2Text"
+                style="font-size: large; font-weight: 500; padding: 30px 50px 10px 50px; color:rgb(73, 29, 5); text-indent: 35px; text-align: justify;">
+                愛彼於1875年在汝山谷的布拉蘇絲小村莊首次亮相。而今年正是成立的第150周年。
+                由Gérald Genta在1970年代初設計了皇家橡樹手錶，其獨特八角形錶圈靈感源自戰艦上的八角舷窗，
+                也憑此獨特設計引領著愛彼挺過石英危機，且風靡至今!</p>
+            <P class="d-none d-md-block fw-bold" style="color:rgb(73, 29, 5); font-size: large; text-align: center;">
+                熱門錶款: ROYAL OAK-皇家橡樹系列</P>
+        </div>
+    </div>
+
+    <H4 id="sec2VC" class="m-5 fw-bolder">
+        <li
+            style="padding-left: 5px; color: rgb(108, 40, 3); border-left: 10px solid orange; list-style-type: none; font-family:Arial, Helvetica, sans-serif;">
+            江詩丹頓(VC)</li>
+    </H4>
+    <div style="display: flex; margin: 50px 30px 100px 30px;">
+        <div class="w-50 m-auto" style="flex: 1;">
+            <img src="./logo/logo-vc.png" class="d-flex m-auto p-2"
+                style="width: 200px; height: 100px; font-weight: 400; object-fit: contain; filter: brightness(30%); box-shadow: 2px 3px 8px 1px rgb(73, 29, 5);">
+            <p class="d-none d-sm-block sec2Text"
+                style="font-size: large; font-weight: 500; padding: 30px 50px 10px 50px; color:rgb(73, 29, 5); text-indent: 35px; text-align: justify;">
+                於1755年在日內瓦初露鋒芒，至今迎來品牌創立270周年。在此期間不斷創新，多款複雜工藝錶款問世，
+                如:二問報時錶配備琺瑯錶盤、機刻雕花和鏤雕錶背，突顯江詩丹頓早期製錶技藝的精髓。
+                而品牌具標誌性的馬爾他十字LOGO，靈感源自發條盒蓋上的機芯部件設計，
+                其用於確保發條傳遞恆定動力，從而達至更穩定的速率，亦因此成為了江詩丹頓追求精準的象徵。</p>
+            <P class="d-none d-md-block fw-bold" style="color:rgb(73, 29, 5); font-size: large; text-align: center;">
+                熱門錶款: Overseas-縱橫四海系列</P>
+        </div>
+        <div style="flex: 1; justify-content: center; align-content: center;"><img src="./section-2/VC-270YERS.png"
+                style=" border: 0 solid transparent; border-radius: 20px; box-shadow: -1px 3px 10px 1px rgb(73, 29, 5);"
+                class="w-75 d-flex m-auto"></div>
+    </div>
+
+    <H4 id="sec2JLC" class="m-5 fw-bolder">
+        <li
+            style="padding-left: 5px; color: rgb(108, 40, 3); border-left: 10px solid orange; list-style-type: none; font-family:Arial, Helvetica, sans-serif;">
+            積家(JLC)</li>
+    </H4>
+    <div style="display: flex; margin: 50px 30px 100px 30px;">
+        <div style="flex: 1; justify-content: center; align-content: center;">
+            <img src="./section-2/JLC-翻轉機芯-2.jpg"
+                style=" border: 0 solid transparent; border-radius: 20px; box-shadow: -1px 3px 10px 1px rgb(73, 29, 5);"
+                class="w-75 d-flex m-auto">
+        </div>
+        <div class="w-50 m-auto" style="flex: 1;">
+            <img src="./logo/logo-JLC.png" class="d-flex m-auto p-2"
+                style="width: 200px; height: 100px; font-weight: 400; object-fit: contain; filter: brightness(30%); box-shadow: 2px 3px 8px 1px rgb(73, 29, 5);">
+            <p class="d-none d-sm-block sec2Text"
+                style="font-size:large; font-weight: 500; padding: 30px 50px 10px 50px; color:rgb(73, 29, 5); text-indent: 35px; text-align: justify;">
+                始於1833年，是少數擁有自家大工坊並以手工製作、開發、裝飾及生產所有奢華腕錶及鐘錶的製錶大師之一。
+                擁有超過 430 項註冊專利和 1,400 款獨特機芯。在愛錶人士心中，積家絕對是文錶的首選，其有著舉足輕重的地位。</p>
+            <P class="d-none d-md-block fw-bold sec2Textp"
+                style="color:rgb(73, 29, 5); font-size: large; text-align: center;">
+                熱門錶款: Master Ultra Thin-超薄大師系列、REVERSO-翻轉系列</P>
+        </div>
+    </div>
+
+    <!-- section-3 腕錶展示 watches -->
+    <br><br id="Watches"><br>
+    <h1 id="Watches-1" class="vujahday-script-regular m-5 fw-bold text-center"
+        style="color: var(--bs-yellow); letter-spacing: 2px;">
+        -- 腕錶展示 Watches --</h1>
+
+    <!-- album -->
+    <main>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5">
+                    <div id="w1" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/PP-598060G-鸚鵡螺-40.5mm-55hr-600萬.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【PP】5980/60G-Nautilus
+                                </h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：40.5 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：55 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 6,000,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w2" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/PP-6002R- Grand Complications-44mm-48hr-1.8億.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【PP】6002R-Grand
+                                    Complications</h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：44 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：48 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 180,000,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w3" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/PP-58211A - Cubitus-45mm-45hr-300萬.jpg"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【PP】58211A-Cubitus
+                                </h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：45 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：45 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 3,000,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="w4" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/AP-1-Royal Oak 飛行陀飛輪-41mm-65hr-2000萬去背.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【AP】Royal Oak 飛行陀飛輪
+                                </h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：41 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：65 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 20,000,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w5" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/AP-2-Royal Oak x KAWS Companion-43mm-72hr-1500萬去背.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【AP】Royal Oak x KAWS
+                                </h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：43 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：72 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 15,000,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w6" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/AP-3-Royal Oak 鑽圈冰藍面-37mm-60hr-200萬去背.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【AP】Royal Oak 鑽圈冰藍面
+                                </h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：37 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：60 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 2,000,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="w7" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/VC-1-Historiques歷史名作-精鋼-37mm-40hr-102萬.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【VC】Historiques
+                                    歷史名作-精鋼</h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：37 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：40 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 1,020,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w8" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/VC-2-Historiques歷史名作-黃金-37mm-40hr-235萬.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【VC】Historiques
+                                    歷史名作-黃金</h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：37 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：40 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 2,350,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w9" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/VC-3-Overseas-粉金綠面-41mm-60hr-193萬.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【VC】Overseas 粉金綠面</h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：41 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：60 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 1,930,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w10" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/JLC-1-Master Ultra Thin萬年曆-39mm-70hr-91.5萬去背.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【JLC】Master Ultra Thin
+                                    萬年曆</h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：39 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：70 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 915,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="w11" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/JLC-2-Reverso-49.4x29.9mm-52hr-80萬去背.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【JLC】Reverso 翻轉系列</h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：49.4 x 29.9 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：52 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 800,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="w12" class="col">
+                        <div class="card shadow-sm">
+                            <img src="./watch/JLC-3-Duometre月相-42.5mm-50hr-100萬去背.png"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em"></text>
+
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-center" style="color: orange;">【JLC】Duometre 月相</h6>
+                                <p class="card-text fw-bold text-center m-1">錶徑：42.5 mm</p>
+                                <p class="card-text fw-bold text-center m-1">動儲：50 hr</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-star-fill"></button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-outline-warning bi bi-bar-chart-line"></button>
+                                    </div>
+                                    <small class="text-success fw-bold">≒$ 1,200,000</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div>
+        <!-- Footer-logo -->
+        <footer class="py-4 vujahday-script-regular justify-content-center align-items-center"
+            style="background-color: var(--bs-yellow);" class="w-100" href="#">
+            <div class="d-block text-dark fw-bold text-center" style="letter-spacing: 5px;">
+                <p class="d-block d-lg-inline m-3">TEL: 04-23758868</p>
+                <p class="d-block d-lg-inline m-3">EMAIL: Timers28@gmail.com</p>
+                <p class="d-block d-xl-inline m-3">台中市北屯區計時路101號</p>
+                <div class="d-block m-4 text-center">
+                    <a href="https://www.google.com/" class="d-inline m-4 fs-3 bi bi-instagram"></a>
+                    <a href="https://www.google.com/" class="d-inline m-4 fs-3 bi bi-facebook"></a>
+                    <a href="https://www.google.com/" class="d-inline m-4 fs-3 bi bi-twitter"></a>
+                </div>
+
+                <hr style="margin: 20px 80px; color: white;">
+                <p class="fs-2 fw-bolder text-light text-center vujahday-script-regular"
+                    style="line-height: 20px; margin-top: 40px; letter-spacing: 2px; text-shadow: 1px 1px 1px gray;">
+                    TIMERS</p>
+                <div class="d-block mx-auto"><img src="./logo/logo-齒輪.png" width="45px"
+                        class="rounded-circle d-block mx-auto my-1"
+                        style="filter: brightness(110%); filter:contrast(130%); box-shadow:2px 2px 2px 1px black;">
+                </div>
+            </div>
+
+        </footer>
+
+</body>
+
+</html>
